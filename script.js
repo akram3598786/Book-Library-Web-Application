@@ -35,8 +35,9 @@ Display.prototype.add = function (book) {
     <td>${book.author}</td>
     <td>${book.semester}</td>
     <td>${book.book_name}</td>
+    <td><button id="delete_btn type="button" class="btn btn-info">Delete</button></td>
 
-    </tr> `;
+    </tr> <br> `;
       
     tobedisplay.innerHTML += uistring;
 
