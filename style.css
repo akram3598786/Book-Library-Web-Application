@@ -1,0 +1,95 @@
+
+College LibrrryProject JS Code
+
+
+
+
+
+// HTML Code
+
+
+
+// CSS Code
+
+ body{
+    background-color: rgb(29, 26, 26);
+} 
+
+#navbar {
+  color: white;
+  background-color: rgb(255, 121, 10);
+}
+
+#icon {
+  color: white;
+}
+
+.nav-link {
+  color: white;
+}
+
+.container {
+  background-color: rgb(rgb(224, 115, 115), green, blue);
+}
+
+.formgroup {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 20px;
+  color: white;
+}
+
+.submit_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+.btn {
+  color: white;
+  background-color: green;
+  width: 90px;
+}
+
+
+/* OUTPUT CSS */
+
+#book_name_out{
+  background-color: green;
+  margin: 10px;
+
+  text-align: center;
+
+}
+  
+#name_out{
+    background-color: red;
+    margin: 10px;
+
+    text-align: center;
+}
+    
+#author_out{
+    background-color:yellow;
+    margin: 10px;
+
+    text-align: center;
+}
+
+#semester_out{
+  background-color: blanchedalmond;
+  margin: 10px;
+  text-align: center;
+}
+    
+
+
+/* OYPUT CSS*/
+
+.added_books_heading{
+    text-align: center;
+}
+

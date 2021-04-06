@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg  " id="navbar">
+        <div class="container-fluid">
+            <!-- <div class="navstyle"> -->
+            <a class="navbar-brand" id="icon" href="#">College Library</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active  " aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            <!-- </div> -->
+        </div>
+    </nav>
+
+    <hr>
+
+    <!-- //offcnvs HTML -->
+
+    <!-- 
+
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+        Link with href
+      </a>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+        Button with data-bs-target
+      </button>
+      
+
+
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+          </div>
+          <div class="dropdown mt-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+
+    <!-- Alert Message-->
+
+    <div id="alert_msg">
+
+    </div>
+
+
+
+    <!-- Continer HTML -->
+
+    <div class="container">
+        <form action="" class="formgroup" id="formgroup">
+
+            <label for="User Name" class="form-label">Your Name :-</label>
+            <input type="text" class="form-control" placeholder="Enter Your Name" id="name" required>
+
+
+            <label for="author Name" class="form-label">Author Name</label>
+            <input type="text" class="form-control" placeholder="Author Name" id="author">
+            <hr>
+
+            <div class="semester">
+                <p>Select Your Semester</p>
+
+                <input type="radio" id="first" value="First" name="semester">
+                <label for="first"></label>First</label>
+                <input type="radio" id="second" value="second" name="semester">
+                <label for="second"></label>Second</label>
+                <input type="radio" id="third" value="third" name="semester">
+                <label for="first"></label>Third</label>
+                <input type="radio" id="fourth" value="fourth" name="semester">
+                <label for="first"></label>Fourth</label>
+
+
+            </div>
+
+            <label for="Book Name" class="form-label"></label>BOOK Name</label>
+            <input type="text" class="form-control" placeholder="Book Name" id="book_name">
+
+            <div class="submit_btn">
+                <button type="submit" class="btn" id="submit_btn">Submit</button>
+            </div>
+        </form>
+
+        <br>
+        <br>
+
+        <!-- OUTPUT at Screen================== -->
+        
+
+
+       <div class="container" id="Output_table">
+
+        <h2 class="added_books_heading"">Added Books</h2>
+    <br>
+
+            <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Semester</th>
+                        <th scope="col">Book Name</th>
+                    </tr>
+                </thead>
+
+
+               <tbody  id="tobedisplay">
+                   
+                </tbody>
+                
+            </table>
+
+
+
+    </div>
+
+
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
