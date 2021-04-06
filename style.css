@@ -1,6 +1,8 @@
 
  body{
-    background-color:  rgba(29, 26, 26, 0.678), 0.678);
+   margin: 0px;
+   padding: 0px;  
+  background-color:  rgba(29, 26, 26, 0.678), 0.678);
 } 
 
 #navbar {
