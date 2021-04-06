@@ -1,23 +1,8 @@
 console.log("Hello akky welcome back")
-// alert("jhsdnjnk");
-
-// get_values();
-
 let name = document.getElementById("name");
 let author = document.getElementById("author");
-
-// let first = document.getElementById("firdt");
-// let second = document.getElementById("second");
-// let third = document.getElementById("third");
-// let fourth = document.getElementById("fourth");
-// let fifth = document.getElementById("fifth");
-// let sixth = document.getElementById("sixth");
-
 let book_name = document.getElementById("book_name");
-
 let submit_btn = document.getElementById("submit_btn");
-
-
 
 // Book object assigning (Constructor)
 
@@ -52,20 +37,7 @@ Display.prototype.add = function (book) {
     <td>${book.book_name}</td>
 
     </tr> `;
-
-   
-              
-     
-             
-
-  /*  let uistring = ` 
-                             <h3 id="book_name_out">${book.book_name}</h3> 
-                             <div id="name_out">${book.name}</div>
-                             <div id="author_out">${book.author}</div>
-                             <div id="semester_out">${book.semester}</div>
-                           <hr> `;
-
-*/
+      
     tobedisplay.innerHTML += uistring;
 
 }
@@ -78,6 +50,7 @@ Display.prototype.clear = function () {
     let formgroup = document.getElementById("formgroup");
     formgroup.reset();
 }
+
 
 //   Validation function to check weather input by user valid or not
 
@@ -116,17 +89,10 @@ Display.prototype.show_alert_msg = function (type, message) {
 
 }
 
-
-
-
-
-
-
-//get output elements for wite HTML
+// Adding Event on Submit Button
 
 submit_btn.addEventListener("click", function get_values(e) {
-    // int Arr[]={"name","email","book_name"}
-
+    
     let name = document.getElementById("name").value;
     let author = document.getElementById("author").value;
     let book_name = document.getElementById("book_name").value;
@@ -166,8 +132,6 @@ submit_btn.addEventListener("click", function get_values(e) {
 
     let display = new Display();
 
-
-
     if (display.validation(book)) {
 
         display.add(book);
@@ -182,5 +146,6 @@ submit_btn.addEventListener("click", function get_values(e) {
     }
     e.preventDefault();
 
-})
+}
+                           )
 
