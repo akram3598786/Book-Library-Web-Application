@@ -1,8 +1,15 @@
 console.log("Hello akky welcome back")
-let name = document.getElementById("name");
-let author = document.getElementById("author");
-let book_name = document.getElementById("book_name");
-let submit_btn = document.getElementById("submit_btn");
+
+// Function to be add
+
+// alert("jhsdnjnk");
+// localStorage.clear();
+// Show Issued or Returned Status of Book
+// Delete function
+
+
+display_onwebpage();
+
 
 // Book object assigning (Constructor)
 
@@ -18,42 +25,88 @@ function Book(name, author, semester, book_name) {
 
 function Display() {
 
+}
+
+// Add details to Local Storage
+
+function addto_storage(book) {
+
+    let books = localStorage.getItem("books");
+
+    if (books == null) {
+        bookobj = [];
+    }
+
+    else {
+
+        bookobj = JSON.parse(books)
+    }
+
+
+    bookobj.push(book);
+    localStorage.setItem("books", JSON.stringify(bookobj));
 
 }
 
 
-Display.prototype.add = function (book) {
+// Display.prototype.display_onwebpage = function (book) {
 
-    console.log("adding to UI");
+function display_onwebpage() {
 
+    //  console.log("adding to UI");
+
+    let uistring = " ";
     let tobedisplay = document.getElementById("tobedisplay");
 
 
-    let uistring = `<tr>
-    <th scope="row">1</th>
-    <td>${book.name.toUpperCase()}.</td>
-    <td>${book.author}</td>
-    <td>${book.semester}</td>
-    <td>${book.book_name}</td>
-    <td><button id="delete_btn type="button" class="btn btn-info">Delete</button></td>
+    let books = localStorage.getItem("books");
 
-    </tr> <br> `;
-      
-    tobedisplay.innerHTML += uistring;
+    if (books == null) {
+        bookobj = [];
+    }
+
+    else {
+        bookobj = JSON.parse(books);
+    }
+
+
+    Array.from(bookobj).forEach(function (element, index) {
+
+
+        uistring += `<tr>
+           <th class="border border-2" scope="row">${index + 1}</th>
+           <td class="border border-2">${element.name.toUpperCase()}</td>
+           <td class="border border-2">${element.author}</td>
+           <td class="border border-2">${element.semester}</td>
+           <td class="border border-2">${element.book_name}</td>
+           <td class="border border-2"><button id="delete_btn type="button" class="btn btn-info">Delete</button></td>
+            </tr> <br> `;
+
+    });
+
+
+    if (bookobj.lenght != 0) {
+        tobedisplay.innerHTML = uistring;
+    }
+    else {
+        tobedisplay.innerHTML = `<p>Nothing to show<\p>`;
+        console.log("nothing to ");
+    }
 
 }
 
 
-//    Reset input fields after submission
+//    Reset input fields after input details submission
 
 Display.prototype.clear = function () {
 
     let formgroup = document.getElementById("formgroup");
     formgroup.reset();
+
 }
 
 
-//   Validation function to check weather input by user valid or not
+//  Validation function to check weather input by user valid or not
 
 Display.prototype.validation = function (book) {
 
@@ -86,14 +139,19 @@ Display.prototype.show_alert_msg = function (type, message) {
 
     setTimeout(function () {
         alert_msg.innerHTML = ''
-    }, 4000);
+    }, 2000);
 
 }
 
-// Adding Event on Submit Button
 
-submit_btn.addEventListener("click", function get_values(e) {
-    
+// Add event on sumbit button to get output on WebScreen
+
+let submit_btn = document.getElementById("submit_btn");
+
+submit_btn.addEventListener("click", function (e) {
+
+    //Getting HTML input values  
+
     let name = document.getElementById("name").value;
     let author = document.getElementById("author").value;
     let book_name = document.getElementById("book_name").value;
@@ -107,13 +165,11 @@ submit_btn.addEventListener("click", function get_values(e) {
     if (first.checked) {
 
         semester = first.value;
-
     }
 
     else if (second.checked) {
 
         semester = second.value;
-
     }
 
     else if (third.checked) {
@@ -133,20 +189,22 @@ submit_btn.addEventListener("click", function get_values(e) {
 
     let display = new Display();
 
+
     if (display.validation(book)) {
 
-        display.add(book);
+        addto_storage(book)   //// Code to implement Local Stprage
+        display_onwebpage(book); // Manipulate DOM to display details on web page
         display.show_alert_msg("Success", "You have submitted successfully!");
         display.clear();
 
     }
-
     else {
-        console.log("wron entry");
+        console.log("wrong entry");
         display.show_alert_msg("Error !", "Please Provide accurate data.");
     }
-    e.preventDefault();
 
-}
-                           )
+    e.preventDefault();
+});
+
+
 
