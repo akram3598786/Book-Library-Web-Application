@@ -73,6 +73,7 @@ body {
 footer {
   height: 60px;
   color: white;
+   margin-top: 100px;
 }
 .footer_text {
   text-align: center;
