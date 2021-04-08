@@ -1,13 +1,16 @@
-
- body{
-   margin: 0px;
-   padding: 0px;  
-  background-color:  rgba(29, 26, 26, 0.678), 0.678);
-} 
+body {
+  margin: 0px;
+  padding: 0px;
+  background-color: black;
+}
 
 #navbar {
   color: white;
-   background-color: black;
+  background-color: rgb(73, 17, 17);
+}
+
+.navbar-toggler-icon {
+  color: white;
 }
 
 #icon {
@@ -18,12 +21,19 @@
   color: white;
 }
 
-.container {
-  background-color: rgb(rgb(224, 115, 115), green, blue);
+@media only screen and (max-width: 600px) {
+  #form_container{
+    /* background-color: lightblue; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
+
+
 .formgroup {
-  background-color: black;
+  background-color: rgb(73, 17, 17);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -44,42 +54,26 @@
   width: 90px;
 }
 
-
 /* OUTPUT CSS */
 
-#book_name_out{
+#book_name_out {
   background-color: green;
   margin: 10px;
 
   text-align: center;
-
-}
-  
-#name_out{
-    background-color: red;
-    margin: 10px;
-
-    text-align: center;
-}
-    
-#author_out{
-    background-color:yellow;
-    margin: 10px;
-
-    text-align: center;
 }
 
-#semester_out{
-  background-color: blanchedalmond;
-  margin: 10px;
+/* OUTput CSS */
+
+.added_books_heading {
+  color: white;
   text-align: center;
 }
-    
 
-
-/* OYPUT CSS*/
-
-.added_books_heading{
-    text-align: center;
+footer {
+  height: 60px;
+  color: white;
 }
-
+.footer_text {
+  text-align: center;
+}
