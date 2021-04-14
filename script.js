@@ -79,7 +79,7 @@ function display_onwebpage() {
            <td class="border border-2">${element.author}</td>
            <td class="border border-2">${element.semester}</td>
            <td class="border border-2">${element.book_name}</td>
-           <td class="border border-2"><button id="delete_btn type="button" class="btn btn-info">Delete</button></td>
+          <td class="border border-2"><button  id = "${index}" type="button"  class="btn btn-info" onclick = "delete_book_detail(${index})"> Delete </button></td>
             </tr> <br> `;
 
     });
@@ -140,6 +140,29 @@ Display.prototype.show_alert_msg = function (type, message) {
     setTimeout(function () {
         alert_msg.innerHTML = ''
     }, 2000);
+
+}
+
+
+// Delete Book details Function
+
+ function delete_book_detail(index){
+  
+    console.log(index);
+    let books = localStorage.getItem("books");
+
+    if(books==null){
+        bookobj = [];
+    }
+
+    else{
+        bookobj = JSON.parse(books);
+    }
+
+    bookobj.splice(index, 1);
+
+    localStorage.setItem("books", JSON.stringify(bookobj));
+    display_onwebpage();
 
 }
 
