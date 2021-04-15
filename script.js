@@ -170,7 +170,7 @@ let search_input = document.getElementById("search_input");
  //Add event on search bar to get required data on screen
 search_input.addEventListener("input" , function(e){
    
-    let search_text = document.getElementById("search_input").value; //To be search value
+    let search_text = document.getElementById("search_input").value.toUpperCase();  //To be search value
     let book_card_with_detail = document.getElementsByClassName("book_card_with_detail"); // Book details Rows
 
     Array.from(book_card_with_detail).forEach(Element =>{
