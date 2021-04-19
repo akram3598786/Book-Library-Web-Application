@@ -12,6 +12,10 @@ body {
 .navbar-toggler-icon {
   color: white;
 }
+#collapsed_links{
+ border: 2px solid white;
+  color: white;
+}
 
 #icon {
   color: white;
